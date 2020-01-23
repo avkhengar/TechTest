@@ -1,9 +1,25 @@
-﻿namespace AnyCompany
+﻿using System.Collections.Generic;
+
+namespace AnyCompany
 {
     public class OrderService
     {
         private readonly OrderRepository orderRepository = new OrderRepository();
 
+
+        public List<CustomerOrder> GetAllCustomersWithOrders()
+        {
+            
+            try
+            {
+                return CustomerRepository.GetCustomerWithOrders();
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
         public bool PlaceOrder(Order order, int customerId)
         {
             Customer customer = null;

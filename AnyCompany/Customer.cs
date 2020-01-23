@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AnyCompany
 {
@@ -12,4 +13,11 @@ namespace AnyCompany
 
         public string Name { get; set; }
     }
+
+    public class CustomerOrder
+    {
+        public Customer customer { get; set; }
+        public Order order { get; set; }
+    }
+
 }
